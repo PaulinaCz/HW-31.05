@@ -39,7 +39,7 @@ public class OwnerDaoImpl  implements OwnerDao {
                 result = insertStatement.executeUpdate() > 0;
 
                 if(insertStatement.executeUpdate() > 0){
-                    dogDao.addDog(dog);
+                    dogDao.addDog(dog, owner);
                 }
 
                 ResultSet generatedKeys = insertStatement.getGeneratedKeys();
@@ -56,7 +56,26 @@ public class OwnerDaoImpl  implements OwnerDao {
 
     @Override
     public int deleteOwner(int ownerId) {
-        return 0;
+
+        int numberOfDeletedOwners = 0;
+
+        String deleteQuery = "" +
+                " DELETE            \n" +
+                " FROM OWNER        \n" +
+                " WHERE ID = ?        " ;
+
+        try {
+            PreparedStatement deleteOwnerStatement = dbConnection.prepareStatement(deleteQuery);
+            deleteOwnerStatement.setInt(1, ownerId);
+            dogDao.deleteDog(dogDao.findDogByOwnerId(ownerId).getId());
+            numberOfDeletedOwners = deleteOwnerStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return numberOfDeletedOwners;
     }
 
     @Override
@@ -69,8 +88,9 @@ public class OwnerDaoImpl  implements OwnerDao {
 
         List<Owner> owners = new ArrayList<>();
 
-        String getAllQuery = "SELECT * FROM JDBC_HOMEWORK.OWNER";
-
+        String getAllQuery = "" +
+                " SELECT ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
+                " FROM OWNER                                            " ;
 
         try {
             Statement statement = dbConnection.createStatement();

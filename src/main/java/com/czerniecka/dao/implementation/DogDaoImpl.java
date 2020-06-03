@@ -2,6 +2,7 @@ package com.czerniecka.dao.implementation;
 
 import com.czerniecka.dao.DogDao;
 import com.czerniecka.model.Dog;
+import com.czerniecka.model.Owner;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,21 +12,63 @@ import java.sql.SQLException;
 public class DogDaoImpl implements DogDao {
 
     private Connection dbConnection;
-    private OwnerDaoImpl ownerDao;
 
     public DogDaoImpl(Connection dbConnection, OwnerDaoImpl ownerDao) {
         this.dbConnection = dbConnection;
-        this.ownerDao = ownerDao;
     }
 
     @Override
-    public boolean addDog(Dog dog) {
-        return false;
+    public boolean addDog(Dog dog, Owner owner) {
+        boolean result = false;
+
+        String insertDog = "" +
+                "INSERT INTO DOG (NAME, BREED, OWNER_ID)           \n" +
+                "VALUES ( ?, ?, ? )                                 " ;
+
+        try {
+            PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog);
+
+            insertDogStatement.setString(1, dog.getDogName());
+            insertDogStatement.setString(2, dog.getDogName());
+            insertDogStatement.setInt(3, owner.getId());
+
+            result = insertDogStatement.executeUpdate() > 0;
+
+            ResultSet generatedKeys = insertDogStatement.getGeneratedKeys();
+            if(generatedKeys.next()){
+                dog.setId(generatedKeys.getInt(1));
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
     @Override
     public int deleteDog(int dogId) {
-        return 0;
+
+        int numberOfDogsDeleted = 0;
+
+        String deleteDogQuery = "" +
+                " DELETE        \n" +
+                " FROM DOG      \n" +
+                " WHERE ID = ?     " ;
+
+        try {
+            PreparedStatement deleteStatement = dbConnection.prepareStatement(deleteDogQuery);
+
+            deleteStatement.setInt(1, dogId);
+            numberOfDogsDeleted = deleteStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return numberOfDogsDeleted;
     }
 
     @Override
@@ -39,8 +82,9 @@ public class DogDaoImpl implements DogDao {
         Dog dogToFind = new Dog();
 
         String query = "" +
-                "SELECT * FROM DOG           " +
-                "WHERe OWNER_ID = ?            " ;
+                " SELECT ID, NAME, BREED          \n" +
+                " FROM DOG                        \n" +
+                " WHERE OWNER_ID = ?          " ;
 
         try {
             PreparedStatement preparedStatement = dbConnection.prepareStatement(query);

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="first methods implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inserts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inserts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inserts.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591182860065</updated>
       <workItem from="1591182863654" duration="500000" />
-      <workItem from="1591183390769" duration="8781000" />
+      <workItem from="1591183390769" duration="10730000" />
     </task>
     <task id="LOCAL-00001" summary="Created schema &amp; tables&#10;Added basic objects and methods">
       <created>1591187972179</created>
@@ -68,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591187972179</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first methods implemented">
+      <created>1591192841630</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591192841630</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,34 +97,34 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183088132" />
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591191707030">
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591193962476">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591191707030" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591192746765">
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591193962476" />
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591192841021">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591192746765" />
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591192841021" />
     <state x="421" y="102" key="FileChooserDialogImpl" timestamp="1591187516876">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="421" y="102" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591187516876" />
-    <state width="496" height="2" key="GridCell.Tab.0.bottom" timestamp="1591192610916">
+    <state width="542" height="2" key="GridCell.Tab.0.bottom" timestamp="1591194378276">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="496" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
-    <state width="496" height="2" key="GridCell.Tab.0.center" timestamp="1591192610916">
+    <state width="542" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
+    <state width="542" height="2" key="GridCell.Tab.0.center" timestamp="1591194378276">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="496" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
-    <state width="496" height="2" key="GridCell.Tab.0.left" timestamp="1591192610916">
+    <state width="542" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
+    <state width="542" height="2" key="GridCell.Tab.0.left" timestamp="1591194378276">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="496" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
-    <state width="496" height="2" key="GridCell.Tab.0.right" timestamp="1591192610916">
+    <state width="542" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
+    <state width="542" height="2" key="GridCell.Tab.0.right" timestamp="1591194378276">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="496" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
+    <state width="542" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
     <state width="240" height="471" key="HiddenNamespacesPopup" timestamp="1591185301264">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
