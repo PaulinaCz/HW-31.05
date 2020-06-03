@@ -37,6 +37,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
                if(insertStatement.executeUpdate() > 0){
                     dogDao.addDog(dog, owner);
+
                 }
 
                 result = insertStatement.executeUpdate() > 0;
