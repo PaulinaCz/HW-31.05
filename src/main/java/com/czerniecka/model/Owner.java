@@ -14,7 +14,6 @@ public class Owner {
 
     public Owner(String name, String sex, String city,
                  String street, String postCode, Dog dog) {
-        this.id = ID_OF_NOT_PERSISTENT_PERSON;
         this.name = name;
         this.sex = sex;
         this.city = city;

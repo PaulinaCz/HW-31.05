@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="Created schema &amp; tables&#10;Added basic objects and methods">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW-31.05.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/config/DBConnectionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/OwnerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
+    <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="first methods implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/inserts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +59,16 @@
       <option name="presentableId" value="Default" />
       <updated>1591182860065</updated>
       <workItem from="1591182863654" duration="500000" />
-      <workItem from="1591183390769" duration="4530000" />
+      <workItem from="1591183390769" duration="8781000" />
     </task>
+    <task id="LOCAL-00001" summary="Created schema &amp; tables&#10;Added basic objects and methods">
+      <created>1591187972179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591187972179</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,49 +76,50 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created schema &amp; tables&#10;Added basic objects and methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created schema &amp; tables&#10;Added basic objects and methods" />
+    <MESSAGE value="first methods implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="first methods implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1591184033622">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.720@0.0.1280.720" timestamp="1591184033622" />
-    <state x="93" y="202" key="#SQL_Dialects" timestamp="1591184089265">
+    <state x="93" y="202" key="#SQL_Dialects" timestamp="1591192789437">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="93" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1591184089265" />
+    <state x="93" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1591192789437" />
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591183088132">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183088132" />
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591187286275">
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591191707030">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591187286275" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591187914282">
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591191707030" />
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591192746765">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591187914282" />
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591192746765" />
     <state x="421" y="102" key="FileChooserDialogImpl" timestamp="1591187516876">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="421" y="102" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591187516876" />
-    <state width="845" height="2" key="GridCell.Tab.0.bottom" timestamp="1591187914462">
+    <state width="496" height="2" key="GridCell.Tab.0.bottom" timestamp="1591192610916">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
-    <state width="845" height="2" key="GridCell.Tab.0.center" timestamp="1591187914462">
+    <state width="496" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
+    <state width="496" height="2" key="GridCell.Tab.0.center" timestamp="1591192610916">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
-    <state width="845" height="2" key="GridCell.Tab.0.left" timestamp="1591187914461">
+    <state width="496" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
+    <state width="496" height="2" key="GridCell.Tab.0.left" timestamp="1591192610916">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591187914461" />
-    <state width="845" height="2" key="GridCell.Tab.0.right" timestamp="1591187914462">
+    <state width="496" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
+    <state width="496" height="2" key="GridCell.Tab.0.right" timestamp="1591192610916">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="845" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
+    <state width="496" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591192610916" />
     <state width="240" height="471" key="HiddenNamespacesPopup" timestamp="1591185301264">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

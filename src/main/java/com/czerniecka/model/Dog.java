@@ -8,9 +8,11 @@ public class Dog {
     private String dogName;
     private String breed;
 
+    public Dog() {
+    }
+
     public Dog(String dogName, String breed) {
 
-        this.id = ID_OF_NOT_PERSISTENT_PERSON;
         this.dogName = dogName;
         this.breed = breed;
     }
