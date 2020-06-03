@@ -2,7 +2,7 @@ package com.czerniecka.model;
 
 public class Dog {
 
-    private static final int ID_OF_NOT_PERSISTENT_PERSON = -1;
+    public static final int ID_OF_NOT_PERSISTENT_DOG = -1;
 
     private int id;
     private String dogName;
@@ -12,7 +12,7 @@ public class Dog {
     }
 
     public Dog(String dogName, String breed) {
-
+        this.id = ID_OF_NOT_PERSISTENT_DOG;
         this.dogName = dogName;
         this.breed = breed;
     }

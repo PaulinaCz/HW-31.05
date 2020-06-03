@@ -1,5 +1,6 @@
 package com.czerniecka.dao.implementation;
 
+import com.czerniecka.dao.DogDao;
 import com.czerniecka.dao.OwnerDao;
 import com.czerniecka.model.Dog;
 import com.czerniecka.model.Owner;
@@ -11,9 +12,9 @@ import java.util.List;
 public class OwnerDaoImpl  implements OwnerDao {
 
     private Connection dbConnection;
-    private DogDaoImpl dogDao;
+    private DogDao dogDao;
 
-    public OwnerDaoImpl(Connection dbConnection, DogDaoImpl dogDao) {
+    public OwnerDaoImpl(Connection dbConnection, DogDao dogDao) {
         this.dbConnection = dbConnection;
         this.dogDao = dogDao;
     }
@@ -21,13 +22,11 @@ public class OwnerDaoImpl  implements OwnerDao {
     @Override
     public boolean addOwner(Owner owner, Dog dog) {
 
-        boolean result = false;
-
-
             String insert = "" +
-                    " INSERT INTO Owner (NAME, SEX, CITY, STREET, POSTCODE)        \n" +
+                    " INSERT INTO JDBC_HOMEWORK.OWNER (NAME, SEX, CITY, STREET, POSTCODE)        \n" +
                     " VALUES (?, ?, ?, ?, ?)                                         " ;
 
+            boolean result = false;
             try{
                 PreparedStatement insertStatement = dbConnection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
                 insertStatement.setString(1, owner.getName());
@@ -36,16 +35,19 @@ public class OwnerDaoImpl  implements OwnerDao {
                 insertStatement.setString(4, owner.getStreet());
                 insertStatement.setString(5, owner.getPostCode());
 
-                result = insertStatement.executeUpdate() > 0;
-
-                if(insertStatement.executeUpdate() > 0){
+               if(insertStatement.executeUpdate() > 0){
                     dogDao.addDog(dog, owner);
                 }
+
+                result = insertStatement.executeUpdate() > 0;
+
 
                 ResultSet generatedKeys = insertStatement.getGeneratedKeys();
                 if(generatedKeys.next()){
                     owner.setId(generatedKeys.getInt(1));
                 }
+
+
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -61,7 +63,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
         String deleteQuery = "" +
                 " DELETE            \n" +
-                " FROM OWNER        \n" +
+                " FROM JDBC_HOMEWORK.OWNER        \n" +
                 " WHERE ID = ?        " ;
 
         try {
@@ -90,7 +92,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
         String getAllQuery = "" +
                 " SELECT ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
-                " FROM OWNER                                            " ;
+                " FROM JDBC_HOMEWORK.OWNER                                            " ;
 
         try {
             Statement statement = dbConnection.createStatement();

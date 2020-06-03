@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/inserts.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/dogInserts.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/ownersInserts.sql" dialect="GenericSQL" />
   </component>
 </project>

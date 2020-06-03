@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dogInserts.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ownersInserts.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/czerniecka/dao/implementation/DogDaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/czerniecka/dao/implementation/OwnerDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/inserts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inserts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inserts.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -36,15 +44,116 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.czerniecka.dao.implementation" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\SDA\JDBC&amp;Hibernate\HW-31.05\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DogDaoImplTest.getDogByOwnerId">
+    <configuration name="DogDaoImplTest.addDogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-31.05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czerniecka.dao.implementation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.czerniecka.dao.implementation" />
+      <option name="MAIN_CLASS_NAME" value="com.czerniecka.dao.implementation.DogDaoImplTest" />
+      <option name="METHOD_NAME" value="addDogTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogDaoImplTest.deleteDogByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-31.05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czerniecka.dao.implementation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.czerniecka.dao.implementation" />
+      <option name="MAIN_CLASS_NAME" value="com.czerniecka.dao.implementation.DogDaoImplTest" />
+      <option name="METHOD_NAME" value="deleteDogByIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogDaoImplTest.getDogByOwnerId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-31.05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czerniecka.dao.implementation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.czerniecka.dao.implementation" />
+      <option name="MAIN_CLASS_NAME" value="com.czerniecka.dao.implementation.DogDaoImplTest" />
+      <option name="METHOD_NAME" value="getDogByOwnerId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerDaoImplTest.addOwnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-31.05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czerniecka.dao.implementation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.czerniecka.dao.implementation" />
+      <option name="MAIN_CLASS_NAME" value="com.czerniecka.dao.implementation.OwnerDaoImplTest" />
+      <option name="METHOD_NAME" value="addOwnerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerDaoImplTest.deleteOwnerByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HW-31.05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czerniecka.dao.implementation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.czerniecka.dao.implementation" />
+      <option name="MAIN_CLASS_NAME" value="com.czerniecka.dao.implementation.OwnerDaoImplTest" />
+      <option name="METHOD_NAME" value="deleteOwnerByIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DogDaoImplTest.getDogByOwnerId" />
+        <item itemvalue="JUnit.DogDaoImplTest.deleteDogByIdTest" />
+        <item itemvalue="JUnit.DogDaoImplTest.addDogTest" />
+        <item itemvalue="JUnit.OwnerDaoImplTest.deleteOwnerByIdTest" />
+        <item itemvalue="JUnit.OwnerDaoImplTest.addOwnerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591182860065</updated>
       <workItem from="1591182863654" duration="500000" />
-      <workItem from="1591183390769" duration="10730000" />
+      <workItem from="1591183390769" duration="15666000" />
     </task>
     <task id="LOCAL-00001" summary="Created schema &amp; tables&#10;Added basic objects and methods">
       <created>1591187972179</created>
@@ -73,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591192841630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added methods with transactions">
+      <created>1591194788864</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591194788864</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,49 +198,74 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created schema &amp; tables&#10;Added basic objects and methods" />
     <MESSAGE value="first methods implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="first methods implemented" />
+    <MESSAGE value="added methods with transactions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added methods with transactions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1591184033622">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.720@0.0.1280.720" timestamp="1591184033622" />
-    <state x="93" y="202" key="#SQL_Dialects" timestamp="1591192789437">
+    <state x="93" y="202" key="#SQL_Dialects" timestamp="1591196229139">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="93" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1591192789437" />
+    <state x="93" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1591196229139" />
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591183088132">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183088132" />
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591193962476">
+    <state x="93" y="93" width="1095" height="535" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591198241264">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591193962476" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591192841021">
+    <state x="93" y="93" width="1095" height="535" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.720@0.0.1280.720" timestamp="1591198241264" />
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591199227828">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591192841021" />
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591199227828" />
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591194788460">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591194788460" />
     <state x="421" y="102" key="FileChooserDialogImpl" timestamp="1591187516876">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="421" y="102" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591187516876" />
-    <state width="542" height="2" key="GridCell.Tab.0.bottom" timestamp="1591194378276">
+    <state x="520" y="259" key="Github.ShareDialog" timestamp="1591194825535">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="542" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
-    <state width="542" height="2" key="GridCell.Tab.0.center" timestamp="1591194378276">
+    <state x="520" y="259" key="Github.ShareDialog/0.0.1280.720@0.0.1280.720" timestamp="1591194825535" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1591199878674">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="542" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
-    <state width="542" height="2" key="GridCell.Tab.0.left" timestamp="1591194378276">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591199878674" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1591199878674">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="542" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
-    <state width="542" height="2" key="GridCell.Tab.0.right" timestamp="1591194378276">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591199878674" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1591199878673">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="542" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591194378276" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591199878673" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1591199878674">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591199878674" />
+    <state width="702" height="217" key="GridCell.Tab.1.bottom" timestamp="1591198179038">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="702" height="217" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591198179038" />
+    <state width="702" height="217" key="GridCell.Tab.1.center" timestamp="1591198179038">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="702" height="217" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1591198179038" />
+    <state width="702" height="217" key="GridCell.Tab.1.left" timestamp="1591198179038">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="702" height="217" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1591198179038" />
+    <state width="702" height="217" key="GridCell.Tab.1.right" timestamp="1591198179038">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="702" height="217" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1591198179038" />
     <state width="240" height="471" key="HiddenNamespacesPopup" timestamp="1591185301264">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -141,13 +282,17 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="540" y="238" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1280.720@0.0.1280.720" timestamp="1591183672023" />
-    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591186263698">
+    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591196354811">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.720@0.0.1280.720" timestamp="1591186263698" />
+    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.720@0.0.1280.720" timestamp="1591196354811" />
     <state x="507" y="86" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1591183700392">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="507" y="86" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183700392" />
+    <state x="402" y="147" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591198967788">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="402" y="147" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.720@0.0.1280.720" timestamp="1591198967788" />
   </component>
 </project>

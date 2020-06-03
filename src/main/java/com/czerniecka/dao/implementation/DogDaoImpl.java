@@ -13,7 +13,7 @@ public class DogDaoImpl implements DogDao {
 
     private Connection dbConnection;
 
-    public DogDaoImpl(Connection dbConnection, OwnerDaoImpl ownerDao) {
+    public DogDaoImpl(Connection dbConnection) {
         this.dbConnection = dbConnection;
     }
 
@@ -22,7 +22,7 @@ public class DogDaoImpl implements DogDao {
         boolean result = false;
 
         String insertDog = "" +
-                "INSERT INTO DOG (NAME, BREED, OWNER_ID)           \n" +
+                "INSERT INTO JDBC_HOMEWORK.DOG (NAME, BREED, OWNER_ID)           \n" +
                 "VALUES ( ?, ?, ? )                                 " ;
 
         try {
@@ -54,7 +54,7 @@ public class DogDaoImpl implements DogDao {
 
         String deleteDogQuery = "" +
                 " DELETE        \n" +
-                " FROM DOG      \n" +
+                " FROM JDBC_HOMEWORK.DOG      \n" +
                 " WHERE ID = ?     " ;
 
         try {
@@ -83,7 +83,7 @@ public class DogDaoImpl implements DogDao {
 
         String query = "" +
                 " SELECT ID, NAME, BREED          \n" +
-                " FROM DOG                        \n" +
+                " FROM JDBC_HOMEWORK.DOG                        \n" +
                 " WHERE OWNER_ID = ?          " ;
 
         try {
