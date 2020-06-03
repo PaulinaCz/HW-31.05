@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="Created schema &amp; tables&#10;Added basic objects and methods">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW-31.05.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/config/DBConnectionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/DogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/OwnerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/DogDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/dao/implementation/OwnerDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/czerniecka/model/Owner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1co6zTLscumUl6SbzxQEDcG0SIK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\SDA\JDBC&amp;Hibernate\HW-31.05\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="959de58e-6592-439a-9934-8ad371b22c66" name="Default Changelist" comment="" />
+      <created>1591182860065</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591182860065</updated>
+      <workItem from="1591182863654" duration="500000" />
+      <workItem from="1591183390769" duration="4530000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created schema &amp; tables&#10;Added basic objects and methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created schema &amp; tables&#10;Added basic objects and methods" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="121" y="0" key="#Project_Structure" timestamp="1591184033622">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="121" y="0" key="#Project_Structure/0.0.1280.720@0.0.1280.720" timestamp="1591184033622" />
+    <state x="93" y="202" key="#SQL_Dialects" timestamp="1591184089265">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="93" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1591184089265" />
+    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591183088132">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183088132" />
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1591187286275">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="446" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1591187286275" />
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1591187914282">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1591187914282" />
+    <state x="421" y="102" key="FileChooserDialogImpl" timestamp="1591187516876">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="102" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591187516876" />
+    <state width="845" height="2" key="GridCell.Tab.0.bottom" timestamp="1591187914462">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
+    <state width="845" height="2" key="GridCell.Tab.0.center" timestamp="1591187914462">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
+    <state width="845" height="2" key="GridCell.Tab.0.left" timestamp="1591187914461">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591187914461" />
+    <state width="845" height="2" key="GridCell.Tab.0.right" timestamp="1591187914462">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591187914462" />
+    <state width="240" height="471" key="HiddenNamespacesPopup" timestamp="1591185301264">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="240" height="471" key="HiddenNamespacesPopup/0.0.1280.720@0.0.1280.720" timestamp="1591185301264" />
+    <state x="171" y="16" key="Maven.ArtifactSearchDialog" timestamp="1591186858479">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="171" y="16" key="Maven.ArtifactSearchDialog/0.0.1280.720@0.0.1280.720" timestamp="1591186858479" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1591183155959">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1591183155959" />
+    <state x="540" y="238" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1591183672023">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="540" y="238" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1280.720@0.0.1280.720" timestamp="1591183672023" />
+    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591186263698">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="511" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.720@0.0.1280.720" timestamp="1591186263698" />
+    <state x="507" y="86" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1591183700392">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="507" y="86" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.720@0.0.1280.720" timestamp="1591183700392" />
+  </component>
+</project>
