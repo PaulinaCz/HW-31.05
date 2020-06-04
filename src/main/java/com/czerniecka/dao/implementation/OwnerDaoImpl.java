@@ -65,7 +65,7 @@ public class OwnerDaoImpl  implements OwnerDao {
         String deleteQuery = "" +
                 " DELETE            \n" +
                 " FROM JDBC_HOMEWORK.OWNER        \n" +
-                " WHERE ID = ?        " ;
+                " WHERE OWNER_ID = ?        " ;
 
         try {
             PreparedStatement deleteOwnerStatement = dbConnection.prepareStatement(deleteQuery);
@@ -92,7 +92,7 @@ public class OwnerDaoImpl  implements OwnerDao {
         List<Owner> owners = new ArrayList<>();
 
         String getAllQuery = "" +
-                " SELECT ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
+                " SELECT OWNER_ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
                 " FROM JDBC_HOMEWORK.OWNER                                            " ;
 
         try {

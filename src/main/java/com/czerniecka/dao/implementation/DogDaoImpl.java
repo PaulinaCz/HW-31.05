@@ -21,25 +21,28 @@ public class DogDaoImpl implements DogDao {
 
         String insertDog = "" +
                 "INSERT INTO JDBC_HOMEWORK.DOG (NAME, BREED, OWNER_ID)           \n" +
-                "VALUES ( ?, ?, ? )                                 " ;
+                "VALUES (?, ?, ?)                                                  ";
 
-        try {
-            PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog);
+        if(owner != null) {
 
-            insertDogStatement.setString(1, dog.getDogName());
-            insertDogStatement.setString(2, dog.getDogName());
-            insertDogStatement.setInt(3, owner.getId());
+            try {
+                PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog);
 
-            result = insertDogStatement.executeUpdate() > 0;
+                insertDogStatement.setString(1, dog.getDogName());
+                insertDogStatement.setString(2, dog.getDogName());
+                insertDogStatement.setInt(3, owner.getId());
 
-            ResultSet generatedKeys = insertDogStatement.getGeneratedKeys();
-            if(generatedKeys.next()){
-                dog.setId(generatedKeys.getInt(1));
+                result = insertDogStatement.executeUpdate() > 0;
+
+                ResultSet generatedKeys = insertDogStatement.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    dog.setId(generatedKeys.getInt(1));
+                }
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         return result;

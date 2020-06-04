@@ -26,6 +26,7 @@ public class OwnerDaoImplTest {
         OwnerDao ownerDao = new OwnerDaoImpl(connection, dogDao);
 
         ownerDao.addOwner(owner, dog);
+        dogDao.addDog(dog, owner);
 
         Assert.assertTrue(owner.getId() != Owner.ID_OF_NOT_PERSISTENT_PERSON);
 
