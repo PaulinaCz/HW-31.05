@@ -35,19 +35,16 @@ public class OwnerDaoImpl  implements OwnerDao {
                 insertStatement.setString(4, owner.getStreet());
                 insertStatement.setString(5, owner.getPostCode());
 
-               if(insertStatement.executeUpdate() > 0){
-                    dogDao.addDog(dog, owner);
+                boolean ifDogAdded = dogDao.addDog(dog, owner);
 
+                if(ifDogAdded){
+                    result = insertStatement.executeUpdate() > 0;
                 }
-
-                result = insertStatement.executeUpdate() > 0;
-
 
                 ResultSet generatedKeys = insertStatement.getGeneratedKeys();
                 if(generatedKeys.next()){
                     owner.setId(generatedKeys.getInt(1));
                 }
-
 
 
             } catch (SQLException e) {
@@ -65,7 +62,7 @@ public class OwnerDaoImpl  implements OwnerDao {
         String deleteQuery = "" +
                 " DELETE            \n" +
                 " FROM JDBC_HOMEWORK.OWNER        \n" +
-                " WHERE OWNER_ID = ?        " ;
+                " WHERE ID = ?        " ;
 
         try {
             PreparedStatement deleteOwnerStatement = dbConnection.prepareStatement(deleteQuery);
@@ -92,7 +89,7 @@ public class OwnerDaoImpl  implements OwnerDao {
         List<Owner> owners = new ArrayList<>();
 
         String getAllQuery = "" +
-                " SELECT OWNER_ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
+                " SELECT ID, NAME, SEX, CITY, STREET, POSTCODE         \n" +
                 " FROM JDBC_HOMEWORK.OWNER                                            " ;
 
         try {

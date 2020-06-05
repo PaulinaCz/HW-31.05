@@ -1,6 +1,7 @@
 package com.czerniecka.dao.implementation;
 
 import com.czerniecka.dao.DogDao;
+import com.czerniecka.dao.OwnerDao;
 import com.czerniecka.model.Dog;
 import com.czerniecka.model.Owner;
 
@@ -21,16 +22,16 @@ public class DogDaoImpl implements DogDao {
 
         String insertDog = "" +
                 "INSERT INTO JDBC_HOMEWORK.DOG (NAME, BREED, OWNER_ID)           \n" +
-                "VALUES (?, ?, ?)                                                  ";
+                "VALUES (?, ?, (SELECT ID FROM JDBC_HOMEWORK.OWNER WHERE NAME = ?))                                               ";
 
         if(owner != null) {
 
             try {
-                PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog);
+                PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog, Statement.RETURN_GENERATED_KEYS);
 
                 insertDogStatement.setString(1, dog.getDogName());
                 insertDogStatement.setString(2, dog.getDogName());
-                insertDogStatement.setInt(3, owner.getId());
+                insertDogStatement.setString(3, owner.getName());
 
                 result = insertDogStatement.executeUpdate() > 0;
 
