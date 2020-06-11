@@ -2,9 +2,9 @@ package com.czerniecka.model;
 
 public class Dog {
 
-    public static final int ID_OF_NOT_PERSISTENT_DOG = -1;
+    public static final Long ID_OF_NOT_PERSISTENT_DOG = -1L;
 
-    private int id;
+    private Long id;
     private String dogName;
     private String breed;
 
@@ -17,17 +17,17 @@ public class Dog {
         this.breed = breed;
     }
 
-    public Dog(int id, String dogName, String breed) {
+    public Dog(Long id, String dogName, String breed) {
         this.id = id;
         this.dogName = dogName;
         this.breed = breed;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

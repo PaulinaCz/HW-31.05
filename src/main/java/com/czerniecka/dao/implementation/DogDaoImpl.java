@@ -10,6 +10,15 @@ import java.sql.*;
 
 public class DogDaoImpl implements DogDao {
 
+    private static final String insertDog = "" +
+            "INSERT INTO JDBC_HOMEWORK.DOG (NAME, BREED, OWNER_ID)           \n" +
+            "VALUES (?, ?, ?)                                               ";
+
+    private static final String updateDog = "" +
+            " UPDATE DOG                                    \n" +
+            " SET NAME = ?, BREED = ?, OWNER_ID = ?         \n" +
+            " WHERE ID =?                                     " ;
+
     private Connection dbConnection;
 
     public DogDaoImpl(Connection dbConnection) {
@@ -20,37 +29,44 @@ public class DogDaoImpl implements DogDao {
     public boolean addDog(Dog dog, Owner owner) {
         boolean result = false;
 
-        String insertDog = "" +
-                "INSERT INTO JDBC_HOMEWORK.DOG (NAME, BREED, OWNER_ID)           \n" +
-                "VALUES (?, ?, (SELECT ID FROM JDBC_HOMEWORK.OWNER WHERE NAME = ?))                                               ";
-
         if(owner != null) {
+                try {
+                    if(dog.getId()==null){
+                    PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog, Statement.RETURN_GENERATED_KEYS);
 
-            try {
-                PreparedStatement insertDogStatement = dbConnection.prepareStatement(insertDog, Statement.RETURN_GENERATED_KEYS);
+                    insertDogStatement.setString(1, dog.getDogName());
+                    insertDogStatement.setString(2, dog.getBreed());
+                    insertDogStatement.setString(3, owner.getName());
 
-                insertDogStatement.setString(1, dog.getDogName());
-                insertDogStatement.setString(2, dog.getDogName());
-                insertDogStatement.setString(3, owner.getName());
+                    result = insertDogStatement.executeUpdate() > 0;
 
-                result = insertDogStatement.executeUpdate() > 0;
+                    ResultSet generatedKeys = insertDogStatement.getGeneratedKeys();
+                    generatedKeys.next();
+                    dog.setId(generatedKeys.getLong(1));
 
-                ResultSet generatedKeys = insertDogStatement.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    dog.setId(generatedKeys.getInt(1));
+                    }else {
+
+                        PreparedStatement updateDogStatement = dbConnection.prepareStatement(updateDog, Statement.RETURN_GENERATED_KEYS);
+
+                        updateDogStatement.setString(1, dog.getDogName());
+                        updateDogStatement.setString(2, dog.getBreed());
+                        updateDogStatement.setLong(3, owner.getId());
+                        updateDogStatement.setLong(4, dog.getId());
+
+                        result = updateDogStatement.executeUpdate() == 0;
+                    }
+
+                }catch (SQLException e) {
+                    e.printStackTrace();
                 }
 
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
 
         return result;
     }
 
     @Override
-    public int deleteDog(int dogId) {
+    public int deleteDog(Long dogId) {
 
         int numberOfDogsDeleted = 0;
 
@@ -62,24 +78,18 @@ public class DogDaoImpl implements DogDao {
         try {
             PreparedStatement deleteStatement = dbConnection.prepareStatement(deleteDogQuery);
 
-            deleteStatement.setInt(1, dogId);
+            deleteStatement.setLong(1, dogId);
             numberOfDogsDeleted = deleteStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
         return numberOfDogsDeleted;
     }
 
     @Override
-    public int updateDog(int dogId) {
-        return 0;
-    }
-
-    @Override
-    public Dog findDogByOwnerId(int ownerId) {
+    public Dog findDogByOwnerId(Long ownerId) {
 
         Dog dogToFind = new Dog();
 
@@ -91,19 +101,18 @@ public class DogDaoImpl implements DogDao {
         try {
             PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
 
-            preparedStatement.setInt(1, ownerId);
+            preparedStatement.setLong(1, ownerId);
 
             ResultSet cursor = preparedStatement.executeQuery();
 
             while(cursor.next()){
                 dogToFind = new Dog(
-                        cursor.getInt(1),
+                        cursor.getLong(1),
                         cursor.getString(2),
                         cursor.getString(3)
                 );
 
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();

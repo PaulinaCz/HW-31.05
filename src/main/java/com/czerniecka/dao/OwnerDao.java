@@ -1,17 +1,14 @@
 package com.czerniecka.dao;
 
-import com.czerniecka.model.Dog;
 import com.czerniecka.model.Owner;
 
 import java.util.List;
 
 public interface OwnerDao {
 
-    boolean addOwner(Owner owner, Dog dog);
+    boolean addOwner(Owner owner);
 
-    int deleteOwner(int ownerId);
-
-    int updateOwner(int ownerId);
+    int deleteOwner(Long ownerId);
 
     List<Owner> getAllOwners();
 

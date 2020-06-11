@@ -2,7 +2,6 @@ package com.czerniecka.dao.implementation;
 
 import com.czerniecka.dao.DogDao;
 import com.czerniecka.dao.OwnerDao;
-import com.czerniecka.model.Dog;
 import com.czerniecka.model.Owner;
 
 import java.sql.*;
@@ -10,6 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OwnerDaoImpl  implements OwnerDao {
+
+    private static final String insert = "" +
+            " INSERT INTO JDBC_HOMEWORK.OWNER (NAME, SEX, CITY, STREET, POSTCODE)        \n" +
+            " VALUES (?, ?, ?, ?, ?)                                         " ;
+
+    private static final String update = "" +
+            " UPDATE OWNER                                                      \n" +
+            " SET NAME = ?, SEX = ?, CITY = ?, STREET = ?, POSTCODE = ?         \n" +
+            " WHERE ID = ?                                                      " ;
 
     private Connection dbConnection;
     private DogDao dogDao;
@@ -20,32 +28,51 @@ public class OwnerDaoImpl  implements OwnerDao {
     }
 
     @Override
-    public boolean addOwner(Owner owner, Dog dog) {
-
-            String insert = "" +
-                    " INSERT INTO JDBC_HOMEWORK.OWNER (NAME, SEX, CITY, STREET, POSTCODE)        \n" +
-                    " VALUES (?, ?, ?, ?, ?)                                         " ;
-
+    public boolean addOwner(Owner owner) {
             boolean result = false;
+
             try{
-                PreparedStatement insertStatement = dbConnection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-                insertStatement.setString(1, owner.getName());
-                insertStatement.setString(2, owner.getSex());
-                insertStatement.setString(3, owner.getCity());
-                insertStatement.setString(4, owner.getStreet());
-                insertStatement.setString(5, owner.getPostCode());
+                dbConnection.setAutoCommit(false);
+                if(owner.getId() == null){
+                    PreparedStatement insertStatement = dbConnection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+                    insertStatement.setString(1, owner.getName());
+                    insertStatement.setString(2, owner.getSex());
+                    insertStatement.setString(3, owner.getCity());
+                    insertStatement.setString(4, owner.getStreet());
+                    insertStatement.setString(5, owner.getPostCode());
 
-                boolean ifDogAdded = dogDao.addDog(dog, owner);
+                    boolean ifDogAdded = dogDao.addDog(owner.getDog(), owner);
 
-                if(ifDogAdded){
-                    result = insertStatement.executeUpdate() > 0;
+                    if(ifDogAdded){
+                        result = insertStatement.executeUpdate() > 0;
+                        ResultSet generatedKeys = insertStatement.getGeneratedKeys();
+                        generatedKeys.next();
+                        owner.setId(generatedKeys.getLong(1));
+
+                        dbConnection.commit();
+                        dbConnection.setAutoCommit(true);
+                    }
+                    dbConnection.rollback();
+                    dbConnection.setAutoCommit(true);
+
+                } else {
+
+                        PreparedStatement updateStatement = dbConnection.prepareStatement(update);
+                        updateStatement.setString(1, owner.getName());
+                        updateStatement.setString(2, owner.getSex());
+                        updateStatement.setString(3, owner.getCity());
+                        updateStatement.setString(4, owner.getStreet());
+                        updateStatement.setString(5, owner.getPostCode());
+                        updateStatement.setLong(6, owner.getId());
+
+                        boolean ifDogAdded = dogDao.addDog(owner.getDog(), owner);
+                        if(ifDogAdded){
+                            dbConnection.commit();
+                        } else {
+                            dbConnection.rollback();
+                        }
+                    dbConnection.setAutoCommit(true);
                 }
-
-                ResultSet generatedKeys = insertStatement.getGeneratedKeys();
-                if(generatedKeys.next()){
-                    owner.setId(generatedKeys.getInt(1));
-                }
-
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -55,7 +82,7 @@ public class OwnerDaoImpl  implements OwnerDao {
     }
 
     @Override
-    public int deleteOwner(int ownerId) {
+    public int deleteOwner(Long ownerId) {
 
         int numberOfDeletedOwners = 0;
 
@@ -66,7 +93,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
         try {
             PreparedStatement deleteOwnerStatement = dbConnection.prepareStatement(deleteQuery);
-            deleteOwnerStatement.setInt(1, ownerId);
+            deleteOwnerStatement.setLong(1, ownerId);
             dogDao.deleteDog(dogDao.findDogByOwnerId(ownerId).getId());
             numberOfDeletedOwners = deleteOwnerStatement.executeUpdate();
 
@@ -76,11 +103,6 @@ public class OwnerDaoImpl  implements OwnerDao {
 
 
         return numberOfDeletedOwners;
-    }
-
-    @Override
-    public int updateOwner(int ownerId) {
-        return 0;
     }
 
     @Override
@@ -94,7 +116,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
         try {
             Statement statement = dbConnection.createStatement();
-            int readId = Owner.ID_OF_NOT_PERSISTENT_PERSON; //1
+            Long readId = Owner.ID_OF_NOT_PERSISTENT_PERSON; //1
             String readName;        //2
             String readSex;         //3
             String readCity;        //4
@@ -104,7 +126,7 @@ public class OwnerDaoImpl  implements OwnerDao {
 
             ResultSet resultFromDb = statement.executeQuery(getAllQuery);
             while(resultFromDb.next()){
-                readId = resultFromDb.getInt(1);
+                readId = resultFromDb.getLong(1);
                 readName = resultFromDb.getString(2);
                 readSex = resultFromDb.getString(3);
                 readCity = resultFromDb.getString(4);
@@ -117,8 +139,6 @@ public class OwnerDaoImpl  implements OwnerDao {
                 owners.add(readOwner);
 
             }
-
-
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -8,10 +8,8 @@ public interface DogDao {
 
     boolean addDog(Dog dog, Owner owner);
 
-    int deleteDog(int dogId);
+    int deleteDog(Long dogId);
 
-    int updateDog(int dogId);
-
-    Dog findDogByOwnerId(int ownerId);
+    Dog findDogByOwnerId(Long ownerId);
 
 }
